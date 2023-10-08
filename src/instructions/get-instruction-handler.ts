@@ -1,10 +1,11 @@
 import { Instruction } from "./instruction"
 import { InstructionHandler } from "./handlers/instruction-handler";
-import { moveLiteralIntoRegisterInstructionHandler } from "./handlers/move-literal-into-register.instruction-handler";
-import { moveRegisterIntoRegisterInstructionHandler } from "./handlers/move-register-into-register.instruction-handler";
-import { moveRegisterIntoMemoryInstructionHandler } from "./handlers/move-register-into-memory.instruction-handler";
-import { moveMemoryIntoRegisterInstructionHandler } from "./handlers/move-memory-into-register.instruction-handler";
-import { addRegisterToRegisterInstructionHandler } from "./handlers/add-register-to-register.instruction-handler";
+import { moveLiteralIntoRegisterInstructionHandler } from "./handlers/mov/move-literal-into-register.instruction-handler";
+import { moveRegisterIntoRegisterInstructionHandler } from "./handlers/mov/move-register-into-register.instruction-handler";
+import { moveRegisterIntoMemoryInstructionHandler } from "./handlers/mov/move-register-into-memory.instruction-handler";
+import { moveMemoryIntoRegisterInstructionHandler } from "./handlers/mov/move-memory-into-register.instruction-handler";
+import { addRegisterToRegisterInstructionHandler } from "./handlers/add/add-register-to-register.instruction-handler";
+import { jumpIfNotEqualInstructionHandler } from "./handlers/jmp/jump-in-not-equal.instruction-handler";
 
 export const getInstructionHandler = (instruction: number): InstructionHandler => {
     switch(instruction) {
@@ -22,6 +23,9 @@ export const getInstructionHandler = (instruction: number): InstructionHandler =
         }
         case Instruction.AddRegisterToRegiser: {
             return addRegisterToRegisterInstructionHandler;
+        }
+        case Instruction.JumpIfNotEqual: {
+            return jumpIfNotEqualInstructionHandler;
         }
         default: {
             throw new Error(`Instruction ${instruction} is not recognized`)

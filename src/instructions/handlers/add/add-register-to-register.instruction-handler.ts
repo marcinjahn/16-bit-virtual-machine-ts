@@ -1,8 +1,8 @@
-import { MemoryManager } from "../../memory/memory-manager";
-import { Register } from "../../registers/register";
-import { RegistersManager } from "../../registers/registers-manager";
-import { getByteAndMoveInstructionPointer, validateRegisterExists } from "../utils";
-import { InstructionHandler } from "./instruction-handler";
+import { MemoryManager } from "../../../memory/memory-manager";
+import { Register } from "../../../registers/register";
+import { RegistersManager } from "../../../registers/registers-manager";
+import { getByteAndMoveInstructionPointer, validateRegisterExists } from "../../utils";
+import { InstructionHandler } from "../instruction-handler";
 
 export const addRegisterToRegisterInstructionHandler: InstructionHandler = (registers: RegistersManager, memory: MemoryManager) => {
     const register1 = getByteAndMoveInstructionPointer(registers, memory);
