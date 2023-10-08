@@ -10,6 +10,8 @@ export enum Register {
     R5 = 7,
     R6 = 8,
     R7 = 9,
+    SP = 10,
+    FP = 11,
     __LENGTH
 }
 
@@ -44,6 +46,12 @@ export const getRegisterDisplayName = (register: Register) => {
         }
         case Register.R7: {
             return "R7";
+        }
+        case Register.SP: {
+            return "SP";
+        }
+        case Register.FP: {
+            return "FP";
         }
     }
 }

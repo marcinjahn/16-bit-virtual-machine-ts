@@ -7,7 +7,10 @@ import { RegistersManager } from "../registers/registers-manager";
 export class Cpu { 
     private registersManager = new RegistersManager();
     
-    constructor(private memory: MemoryManager) { }
+    constructor(private memory: MemoryManager) { 
+        this.registersManager.setRegister(Register.SP, this.memory.sizeInBytes - 2);
+        this.registersManager.setRegister(Register.FP, this.memory.sizeInBytes - 2);
+    }
 
     step(): void {
        const instruction = this.fetchInstruction(); 

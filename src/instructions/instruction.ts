@@ -5,4 +5,7 @@ export enum Instruction {
     MoveMemoryIntoRegister = 0x13,
     AddRegisterToRegiser = 0x14,
     JumpIfNotEqual = 0x15,
+    PushLiteralValue = 0x17,
+    PushRegister = 0x18,
+    PopRegister = 0x19,
 }

@@ -2,7 +2,7 @@ export class MemoryManager {
     buffer: ArrayBuffer;
     private dataView: DataView;
 
-    constructor(private sizeInBytes: number) {
+    constructor(public sizeInBytes: number) {
         this.buffer = new ArrayBuffer(sizeInBytes);
         this.dataView = new DataView(this.buffer);
     }
