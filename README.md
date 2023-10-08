@@ -1,4 +1,8 @@
-# 16-bit-virtual-machine-ts
+# 16-bit Virtual Machine Language in TypeScript 
+
+A simple implementation of 16-bit VM in TypeScript. It supports a few basic instructions.
+
+## Running
 
 To install dependencies:
 
@@ -11,5 +15,3 @@ To run:
 ```bash
 bun run src/index.ts
 ```
-
-This project was created using `bun init` in bun v1.0.4. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
